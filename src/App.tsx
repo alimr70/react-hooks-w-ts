@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef, MouseEvent, KeyboardEvent } from 'react'
+import Counter from './Counter'
 
 interface User {
   id: number,
@@ -36,10 +37,16 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{ color: "skyblue" }}>UseState:</h1>
       <h1>{count}</h1>
+      <h1 style={{ color: "skyblue" }}>UseCallback:</h1>
       <button onClick={addTwo}>Add</button>
+      <h1 style={{ color: "skyblue" }}>UseMemo:</h1>
       <h2>{result}</h2>
+      <h1 style={{ color: "skyblue" }}>UseRef:</h1>
       <input ref={inputRef} type="text" />
+      <h1 style={{ color: "skyblue" }}>UseReducer:</h1>
+      <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
     </div>
   )
 }
